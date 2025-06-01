@@ -1,15 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "29.0.3"
+    compileSdk 35 // change from 31 to 35
+    // buildToolsVersion "29.0.3"
+
+    namespace 'com.example.diceroller' // add namespace
 
     defaultConfig {
         applicationId "com.example.diceroller"
         minSdkVersion 19
-        targetSdkVersion 31
+        targetSdkVersion 35 // change from 31 to 35
         versionCode 1
         versionName "1.0"
 
@@ -26,6 +28,11 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // add JVM target option
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
